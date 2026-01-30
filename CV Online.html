@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Ilham | Technical Support Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary: #0f172a;       /* Dark Navy */
+            --accent: #3b82f6;        /* Bright Blue */
+            --bg-light: #f8fafc;      /* Very Light Blue/Grey */
+            --white: #ffffff;
+            --text-dark: #334155;
+            --text-light: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* --- HERO HEADER --- */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-item:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .contact-item a { color: white; }
+
+        /* --- MAIN CONTAINER --- */
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 40px; /* Pull up to overlap header */
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* --- CARDS --- */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        /* --- TIMELINE EXPERIENCE --- */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+
+        .job-header h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .job-header .company {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .job-header .date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .timeline-item ul {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .timeline-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .timeline-item li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- SKILLS PILLS --- */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .skill-category-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin: 20px 0 10px 0;
+            font-weight: 700;
+        }
+
+        /* --- REFERENCES GRID --- */
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .ref-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .ref-card strong { color: var(--primary); display: block; margin-bottom: 5px;}
+        .ref-card span { display: block; font-size: 0.9rem; color: var(--text-light); margin-bottom: 5px; }
+        .ref-card a { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .container { margin-top: 20px; padding: 10px; }
+            .card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Mohamad Ilham Bin Mohd Sobri</h1>
+        <div class="subtitle">Technical Support Specialist</div>
+        
+        <div class="contact-bar">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i> Nilai, Negeri Sembilan
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i> +6017-8732029
+            </div>
+            <div class="contact-item">
+                <a href="mailto:mohamadilhamsobri@gmail.com">
+                    <i class="fas fa-envelope"></i> mohamadilhamsobri@gmail.com
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://linkedin.com/in/ilham-sobri" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-user-circle"></i> Professional Summary</h2>
+            <p>Dedicated Technical Support Specialist with over 6 years of experience in customer service and troubleshooting hardware, software, and network issues. Proven track record in improving system uptime and client satisfaction, with strong problem-solving and communication skills.</p>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>L2 Software Support Engineer</h3>
+                    <span class="company">NCR Voyix | Bangsar South, KL</span>
+                    <span class="date">July 2023 - Present</span>
+                </div>
+                <ul>
+                    <li>Provide Second-Level Support to the Woolworths Group (Australia & New Zealand).</li>
+                    <li>Managed Incident Management Queue using ServiceNow with prompt response times.</li>
+                    <li>Conduct diagnostics on R10 (Retalix) application systems, MSSQL databases, and hardware.</li>
+                    <li>Executed change management activities as a change coordinator.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Remote Resolution Support</h3>
+                    <span class="company">NCR Corporation | Bangsar South, KL</span>
+                    <span class="date">Dec 2021 - July 2023</span>
+                </div>
+                <ul>
+                    <li>Provided technical support for Self-Checkout (SCO) machines for retail clients (Woolworths & Foodstuffs).</li>
+                    <li>Isolated problems and utilized complex known solutions to resolve issues remotely.</li>
+                    <li>Collaborated with field engineers to ensure problem resolution.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Team Lead Helpdesk Support</h3>
+                    <span class="company">Diebold Nixdorf | Ampang, KL</span>
+                    <span class="date">June 2021 - Dec 2021</span>
+                </div>
+                <ul>
+                    <li>Supervised and mentored the helpdesk team for Shell Malaysia & Singapore.</li>
+                    <li>Managed escalated technical issues and served as the primary escalation point.</li>
+                    <li> tracked team performance metrics to identify trends for improvement.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Technical Helpdesk Support</h3>
+                    <span class="company">Diebold Nixdorf | Ampang, KL</span>
+                    <span class="date">Mar 2019 - June 2021</span>
+                </div>
+                <ul>
+                    <li>Conducted 1st & 2nd level technical support for Shell stations via call and email.</li>
+                    <li>Logged issues in Oracle CRM and performed remote troubleshooting (Command Prompt, Remote Desktop).</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Helpdesk Officer</h3>
+                    <span class="company">MyEG Services Berhad | Petaling Jaya</span>
+                    <span class="date">June 2018 - Mar 2019</span>
+                </div>
+                <ul>
+                    <li>Managed E-Government Services support including payments and delivery services.</li>
+                    <li>Assisted users with foreign worker and maid permit renewals.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Customer Support Specialist</h3>
+                    <span class="company">Digi Telecommunications | Shah Alam</span>
+                    <span class="date">Oct 2017 - June 2018</span>
+                </div>
+                <ul>
+                    <li>Troubleshooted customer issues related to services, billing, and technical support.</li>
+                    <li>Analyzed customer requirements for product consultation.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Technical Support Representative</h3>
+                    <span class="company">Telekom Malaysia | Bangsar</span>
+                    <span class="date">Sept 2015 - May 2017</span>
+                </div>
+                <ul>
+                    <li>Diagnosed and resolved hardware, software, and connectivity problems (internet/phone).</li>
+                    <li>Gathered customer feedback to improve service delivery.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-tools"></i> Technical Skills</h2>
+            
+            <div class="skill-category-title">Operating Systems & Software</div>
+            <div class="skills-wrapper">
+                <span class="skill-tag">Windows</span>
+                <span class="skill-tag">macOS</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Microsoft Office Suite</span>
+                <span class="skill-tag">Adobe Suite</span>
+                <span class="skill-tag">Google Workspace</span>
+            </div>
+
+            <div class="skill-category-title">Support Tools & CRM</div>
+            <div class="skills-wrapper">
+                <span class="skill-tag">ServiceNow</span>
+                <span class="skill-tag">Zendesk</span>
+                <span class="skill-tag">Genesys Cloud</span>
+                <span class="skill-tag">Avaya</span>
+                <span class="skill-tag">Oracle CRM</span>
+            </div>
+
+            <div class="skill-category-title">Remote & Hardware</div>
+            <div class="skills-wrapper">
+                <span class="skill-tag">TeamViewer</span>
+                <span class="skill-tag">Remote Desktop</span>
+                <span class="skill-tag">AnyDesk</span>
+                <span class="skill-tag">Desktops/Laptops</span>
+                <span class="skill-tag">Printers/Scanners</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline-item">
+                <div class="job-header">
+                    <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                    <span class="company">SMK Bandar Baru Bangi, Selangor</span>
+                    <span class="date">2010 - 2012</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-address-book"></i> References</h2>
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <strong>Fardha Faradisha</strong>
+                    <span>Team Manager Retail RRS Team (ANZ)</span>
+                    <span>NCR Voyix</span>
+                    <a href="mailto:fardha.faradisha@ncratleos.com">fardha.faradisha@ncratleos.com</a>
+                    <br>
+                    <span>+6012-7871310</span>
+                </div>
+                <div class="ref-card">
+                    <strong>Shahir bin Abdul Hakim</strong>
+                    <span>Team Manager Global Delivery Centre APAC</span>
+                    <span>Diebold Nixdorf</span>
+                    <a href="mailto:shaalhelsy@gmail.com">shaalhelsy@gmail.com</a>
+                    <br>
+                    <span>+6019-9924299</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mohamad Ilham Bin Mohd Sobri. <br>Built with modern web technologies.</p>
+    </footer>
+
+</body>
+</html>
