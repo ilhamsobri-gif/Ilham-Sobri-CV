@@ -43,8 +43,20 @@
         .hero {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: var(--white);
-            padding: 80px 20px;
+            padding: 60px 20px 80px; /* Adjusted padding */
             text-align: center;
+        }
+
+        /* PROFILE PICTURE STYLES */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover; /* Ensures photo doesn't stretch */
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background-color: #ddd; /* Grey background if image fails to load */
         }
 
         .hero h1 {
@@ -258,6 +270,8 @@
 <body>
 
     <header class="hero">
+        <img src="profile.jpg" alt="Mohamad Ilham" class="profile-img">
+
         <h1>Mohamad Ilham Bin Mohd Sobri</h1>
         <div class="subtitle">Technical Support Specialist</div>
         
@@ -452,5 +466,4 @@
     </footer>
 
 </body>
-
 </html>
